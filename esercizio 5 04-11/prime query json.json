@@ -1,0 +1,10 @@
+{
+	"nome":"Pier",
+	"cognome":"Butt",
+	"residenza":"Lombardia",
+	"flagUe":true
+}
+
+db.clienti.find({ residenza: "Lombardia" },{ nome: 1, cognome: 1, _id: 0 })
+db.clienti.find( { residenza: { $in: ["Lombardia", "Campania"] } }, { nome: 1, cognome: 1, _id: 0 })
+db.clienti.find({ FlagUe: { $exists: true } })
